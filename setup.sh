@@ -10,7 +10,7 @@ fi
 sh $laptop_script &&
   rcup -d $(dirname $0) &&
   # Run laptop again to ensure any local laptop changes are going in
-  $laptop_script &&
+  sh $laptop_script &&
   rm -rf $laptop_folder &&
   # This has been the easiest way I've found to keep virtualenvwrapper working
   sudo easy_install virtualenvwrapper &&
