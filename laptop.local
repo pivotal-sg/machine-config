@@ -27,8 +27,10 @@ git_clone_or_pull https://github.com/yarbelk/tmux-config.git ~/.tmux &&
 
 brew bundle --file=- <<-EOF
 tap "caskroom/fonts"
+tap "d12frosted/emacs-plus"
 
 brew  "autojump"  # easily jump between directories you've visited before
+brew  "emacs-plus", args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick', 'with-spacemacs-icon']
 brew  "git-hooks"
 brew  "gradle"
 brew  "htop-osx"
@@ -45,7 +47,6 @@ cask "alfred"
 cask "android-studio"
 cask "caffeine"
 cask "dockertoolbox"
-cask "emacs"
 cask "firefox"
 cask "font-sauce-code-powerline"
 cask "font-source-code-pro"
