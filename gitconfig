@@ -1,0 +1,22 @@
+[core]
+  excludesfile = ~/.gitignore_global
+
+[user]
+  name = Pair
+  email = pair@pivotal.io
+[push]
+  default = simple
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff --cached
+  lg = log -p
+  who = shortlog -s --
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+[init]
+  templatedir = ~/.git-template-with-git-hooks

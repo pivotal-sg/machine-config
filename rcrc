@@ -1,0 +1,2 @@
+EXCLUDES="README.md manual-config setup.sh"
+DOTFILES_DIRS="$HOME/.dotfiles-local $HOME/workspace/machine-conf"

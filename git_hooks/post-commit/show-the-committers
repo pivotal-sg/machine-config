@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "========================================"
+echo "Commit Authors : \033[35m `git log -1 HEAD --format='%an %cn'`\033[0m"
+echo "========================================"
+echo "To reset the git pair"
+echo "$ git pair developer1 developer2"
+echo '$ git commit --amend --reset-author -CHEAD\n'

@@ -1,0 +1,100 @@
+# -*- mode: sh -*-
+### git
+
+git_clone_or_pull() {
+  local REPOSRC=$1
+  local LOCALREPO=$2
+  local LOCALREPO_VC_DIR=$LOCALREPO/.git
+  if [[ ! -d "$LOCALREPO_VC_DIR" ]]; then
+    git clone --recursive $REPOSRC $LOCALREPO
+  else
+    pushd $LOCALREPO
+    git pull $REPOSRC && git submodule update --init --recursive
+    popd
+  fi
+}
+
+### brew cask
+brew_cask_expand_alias() {
+  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
+}
+
+brew_cask_is_installed() {
+  local NAME=$(brew_cask_expand_alias "$1")
+  brew cask list -1 | grep -Fqx "$NAME"
+}
+
+brew_cask_install() {
+  if ! brew_cask_is_installed "$1"; then
+    brew cask install "$@"
+  fi
+}
+
+brew_cask_install_or_upgrade() {
+  if brew_cask_is_installed "$1"; then
+    echo "$1 is already installed, brew cask upgrade is not yet implemented"
+  else
+    brew cask install "$@"
+  fi
+}
+
+####
+casks=(
+  alfred
+  dockertoolbox
+  emacs
+  firefox
+  font-sauce-code-powerline
+  font-source-code-pro
+  gitup
+  intellij-idea
+  android-studio
+  iterm2
+  java
+  jumpcut
+  keycastr
+  skitch
+  slack
+  the-unarchiver
+  vagrant
+  vmware-fusion
+)
+
+brews=(
+  autojump  # easily jump between directories you've visited before
+  htop-osx
+  jq
+  pyenv
+  q
+  the_platinum_searcher
+  wget
+  tree
+  git-hooks
+)
+
+####
+
+git_clone_or_pull https://github.com/syl20bnr/spacemacs.git $HOME/.emacs
+git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+git_clone_or_pull https://github.com/yarbelk/tmux-config.git ~/.tmux &&
+  ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
+
+####
+
+brew_tap caskroom/fonts
+
+for drink in "${casks[@]}" ; do
+  fanchy_echo "Installing or upgrading '$drink' from cask"
+  brew_cask_install_or_upgrade "$drink"
+done
+
+for drink in "${brews[@]}" ; do
+  fanchy_echo "Installing or upgrading '$drink'"
+  brew_install_or_upgrade "$drink"
+done
+
+###
+# Post setup
+rehash || true
+
+git hooks --installglobal

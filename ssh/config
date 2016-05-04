@@ -1,0 +1,10 @@
+# Host somewhere.tld
+#   IdentityFile ~/.ssh/some-ssh.id_rsa
+#   User root
+
+# This should always be last
+Host * !localhost !127.0.0.1
+  ControlMaster auto
+  ControlPersist 3600
+  ServerAliveInterval 600
+  ControlPath ~/tmp/ssh-%r@%n-%h:%p
