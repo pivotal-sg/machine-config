@@ -41,6 +41,7 @@ brew_cask_install_or_upgrade() {
 ####
 casks=(
   alfred
+  android-studio
   dockertoolbox
   emacs
   firefox
@@ -48,28 +49,27 @@ casks=(
   font-source-code-pro
   gitup
   intellij-idea
-  android-studio
   iterm2
   java
   jumpcut
   keycastr
+  shades
   skitch
   slack
   the-unarchiver
   vagrant
-  vmware-fusion
 )
 
 brews=(
   autojump  # easily jump between directories you've visited before
+  git-hooks
   htop-osx
   jq
   pyenv
   q
   the_platinum_searcher
-  wget
   tree
-  git-hooks
+  wget
 )
 
 ####

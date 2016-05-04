@@ -19,4 +19,7 @@ git clone https://github.com/thoughtbot/laptop.git /tmp/laptop &&
   chsh -s /usr/local/bin/zsh &&
   rcup -d $(dirname $0) &&
   # Run laptop again to ensure any local laptop changes are going in
-  /tmp/laptop/mac
+  /tmp/laptop/mac &&
+  rm -rf /tmp/laptop &&
+  # rbenv and pyenv are both installed from brew and will keep conf there
+  rm -rf ~/.pyenv ~/.rbenv

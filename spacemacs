@@ -265,7 +265,6 @@ you should place you code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(magit-git-executable "/Users/neo/bin/git-duet-wrapper")
  '(markdown-asymmetric-header t)
  '(ring-bell-function (quote ignore) t)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
