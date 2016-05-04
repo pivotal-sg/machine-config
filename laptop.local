@@ -14,88 +14,60 @@ git_clone_or_pull() {
   fi
 }
 
-### brew cask
-brew_cask_expand_alias() {
-  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
-}
-
-brew_cask_is_installed() {
-  local NAME=$(brew_cask_expand_alias "$1")
-  brew cask list -1 | grep -Fqx "$NAME"
-}
-
-brew_cask_install() {
-  if ! brew_cask_is_installed "$1"; then
-    brew cask install "$@"
-  fi
-}
-
-brew_cask_install_or_upgrade() {
-  if brew_cask_is_installed "$1"; then
-    echo "$1 is already installed, brew cask upgrade is not yet implemented"
-  else
-    brew cask install "$@"
-  fi
-}
-
-####
-casks=(
-  alfred
-  android-studio
-  dockertoolbox
-  emacs
-  firefox
-  font-sauce-code-powerline
-  font-source-code-pro
-  gitup
-  intellij-idea
-  iterm2
-  java
-  jumpcut
-  keycastr
-  shades
-  skitch
-  slack
-  the-unarchiver
-  vagrant
-)
-
-brews=(
-  autojump  # easily jump between directories you've visited before
-  git-hooks
-  htop-osx
-  jq
-  pyenv
-  q
-  the_platinum_searcher
-  tree
-  wget
-)
-
 ####
 
 git_clone_or_pull https://github.com/syl20bnr/spacemacs.git $HOME/.emacs
 git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 git_clone_or_pull https://github.com/pivotal-sg/vim-config.git $HOME/workspace/vim-config
 git_clone_or_pull https://github.com/yarbelk/tmux-config.git ~/.tmux &&
-  ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
+  ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
 ####
 
-brew_tap caskroom/fonts
 
-for drink in "${casks[@]}" ; do
-  fanchy_echo "Installing or upgrading '$drink' from cask"
-  brew_cask_install_or_upgrade "$drink"
-done
+brew bundle --file=- <<-EOF
+tap "caskroom/fonts"
 
-for drink in "${brews[@]}" ; do
-  fanchy_echo "Installing or upgrading '$drink'"
-  brew_install_or_upgrade "$drink"
-done
+brew  "autojump"  # easily jump between directories you've visited before
+brew  "git-hooks"
+brew  "gradle"
+brew  "htop-osx"
+brew  "jq"
+brew  "lzlib"  # needed to compile python
+brew  "maven"
+brew  "pyenv"
+brew  "q"
+brew  "the_platinum_searcher"
+brew  "tree"
+brew  "wget"
+
+cask "alfred"
+cask "android-studio"
+cask "caffeine"
+cask "dockertoolbox"
+cask "emacs"
+cask "firefox"
+cask "font-sauce-code-powerline"
+cask "font-source-code-pro"
+cask "gitup"
+cask "google-chrome"
+cask "intellij-idea"
+cask "iterm2"
+cask "java"
+cask "jumpcut"
+cask "keycastr"
+cask "macvim"
+cask "shades"
+cask "skitch"
+cask "slack"
+cask "spectacle"
+cask "the-unarchiver"
+cask "vagrant"
+cask "virtualbox"
+EOF
 
 ###
 # Post setup
 rehash || true
 
-git hooks --installglobal
+[ -x "$HOME/.git-template-with-git-hooks/" ] || git hooks --installglobal

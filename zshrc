@@ -57,6 +57,7 @@ plugins=(
   pyenv
   rbenv
   git
+  virtualenvwrapper
 )
 
 # User configuration
