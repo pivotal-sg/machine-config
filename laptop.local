@@ -29,10 +29,10 @@ git_clone_or_pull https://github.com/yarbelk/tmux-config.git ~/.tmux &&
 
 brew bundle --file=- <<-EOF
 tap "caskroom/fonts"
-tap "d12frosted/emacs-plus"
+tap "railwaycat/emacsmacport"
 
 brew  "autojump"  # easily jump between directories you've visited before
-brew  "emacs-plus", args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick', 'with-spacemacs-icon']
+brew  "emacs-mac"
 brew  "git-hooks"
 brew  "gradle"
 brew  "htop-osx"
