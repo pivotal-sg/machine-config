@@ -100,3 +100,9 @@ export PATH="$HOME/.bin:$PATH"
 
 # git duet
 export GIT_DUET_ROTATE_AUTHOR=1
+
+# Enable Zmv (Zsh-contrib pattern based renaming tool)
+autoload -U zmv
+
+# We bind M-l to it's default, oh-my-zsh clobbers M-l (Alt-l) by binding it to "ls<RET>"
+bindkey "l" down-case-word # Alt/Opt/Meta-l lowercase from cursor to word end
