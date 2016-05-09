@@ -8,12 +8,14 @@ configs.
 
 1. Open `Terminal`
   ```shell
+  sudo -s "echo '/user/loca/bin/zsh' >> /etc/shells"
   cd ~workspace/machine-config
   git pull
   ./setup.sh
   ```
 
 This will:
+  - Allow you to use zsh as the shell
   - Ask you to name this machine (there should be a sticker on the machine
     telling you it's name)
   - Clone [thoughtbot/laptop] and run the laptop script
