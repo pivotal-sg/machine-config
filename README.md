@@ -8,8 +8,9 @@ configs.
 
 1. Open `Terminal`
   ```shell
+  
   sudo -s "echo '/user/loca/bin/zsh' >> /etc/shells"
-  cd ~workspace/machine-config
+  cd ~/workspace/machine-config
   git pull
   ./setup.sh
   ```
