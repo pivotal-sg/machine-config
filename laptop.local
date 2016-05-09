@@ -31,6 +31,8 @@ brew bundle --file=- <<-EOF
 tap "caskroom/fonts"
 tap "railwaycat/emacsmacport"
 
+cask "java" # this comes first because maven depends on java to be installed
+
 brew  "autojump"  # easily jump between directories you've visited before
 brew  "emacs-mac"
 brew  "git-hooks"
@@ -56,7 +58,6 @@ cask "gitup"
 cask "google-chrome"
 cask "intellij-idea"
 cask "iterm2"
-cask "java"
 cask "jumpcut"
 cask "keycastr"
 cask "macvim"
