@@ -120,3 +120,5 @@ update-machine-config(){
   git --git-dir ~/workspace/machine-config/.git pull
   ~/workspace/machine-config/setup.sh
 }
+
+eval "$(rbenv init - --no-rehash)"

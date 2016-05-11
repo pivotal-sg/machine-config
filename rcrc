@@ -1,2 +1,2 @@
-EXCLUDES="README.md manual-config setup.sh"
+EXCLUDES="README.md manual-config setup.sh laptop.local"
 DOTFILES_DIRS="$HOME/.dotfiles-local $HOME/workspace/machine-conf"
