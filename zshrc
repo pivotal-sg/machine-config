@@ -67,6 +67,14 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
+# Oh My Zsh / Agnoster customization
+is_ssh() { [[ $(echo $(who am i) | cut -d' ' -f 6) ]] && echo " ➟ " }
+
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@$(is_ssh)%m"
+  fi
+}
 # You may need to manually set your language environment
 export LANG=en_GB.UTF-8
 
