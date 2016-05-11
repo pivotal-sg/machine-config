@@ -114,3 +114,9 @@ autoload -U zmv
 
 # We bind M-l to it's default, oh-my-zsh clobbers M-l (Alt-l) by binding it to "ls<RET>"
 bindkey "l" down-case-word # Alt/Opt/Meta-l lowercase from cursor to word end
+
+# self update script
+update-machine-config(){
+  git --git-dir ~/workspace/machine-config/.git pull
+  ~/workspace/machine-config/setup.sh
+}
