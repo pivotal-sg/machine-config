@@ -69,14 +69,12 @@ brew "pyenv"
 brew "q"
 brew "sift"
 brew "the_platinum_searcher"
-brew "the_silver_searcher"
 brew "tree"
 brew "wget"
 
 EOF
 
-###
-# Post setup
-rehash || true
+## Git-Pair
+rbenv exec gem install neo-git-pair
 
 [ -x "$HOME/.git-template-with-git-hooks/" ] || git hooks --installglobal
