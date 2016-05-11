@@ -1,6 +1,6 @@
-#!/bin/zsh
+#!/bin/sh
 
-if [[ 2 > ${#@} ]]; then
+if [[ ${#@} < 2 ]]; then
   echo "Usage:
   ssh-alias PROJECT HOST [GIT_USER]
   "

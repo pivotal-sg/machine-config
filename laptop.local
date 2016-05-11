@@ -16,16 +16,17 @@ git_clone_or_pull() {
 
 ####
 
-git_clone_or_pull https://github.com/syl20bnr/spacemacs.git $HOME/.spacemacs-emacs
+git_clone_or_pull https://github.com/syl20bnr/spacemacs.git $HOME/.spacemacs-emacs &&
+  ln -sf ~/.spacemacs-emacs ~/.emacs.d
+
 git_clone_or_pull https://github.com/ocodo/.emacs.d.git $HOME/.ocodo-emacs
-ln -sf ~/.spacemacs-emacs ~/.emacs.d
+
 git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 git_clone_or_pull https://github.com/pivotal-sg/vim-config.git $HOME/workspace/vim-config
 git_clone_or_pull https://github.com/yarbelk/tmux-config.git ~/.tmux &&
   ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
 ####
-
 
 brew bundle --file=- <<-EOF
 tap "caskroom/fonts"
