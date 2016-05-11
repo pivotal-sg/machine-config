@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh-alias $1 github.com

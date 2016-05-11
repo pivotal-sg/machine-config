@@ -1,0 +1,52 @@
+#!/bin/zsh
+
+if [[ 2 > ${#@} ]]; then
+  echo "Usage:
+  ssh-alias PROJECT HOST [GIT_USER]
+  "
+  exit 1
+fi
+
+PROJECT=$1
+HOST=$2
+USER=${3-git}
+identity_file=$HOME/.ssh/id_rsa_$PROJECT
+ssh_config=$HOME/.ssh/config
+
+if [[ -s $identity_file ]];then
+  echo "Indentity file $identity_file already exists"
+else
+  echo "There is no SSH indentity key for this project, create one [Y/n]\n" && read reply
+  if [[ "n" == $(echo "$reply" | tr '[:upper:]' '[:lower:]') ]]; then
+    echo "abort"
+    exit 1;
+  else
+    ssh-project $PROJECT
+  fi
+fi
+
+new_host="Host $PROJECT"
+new_config="
+$new_host
+  HostName $HOST
+  User $USER
+  IndentityFile $identity_file
+"
+
+grep_result=$(grep "$new_host" ~/.ssh/config)
+
+if [[ "" == $grep_result ]]; then
+  echo "$new_config" >> $ssh_config
+  echo "$PROJECT aliased to $HOST for ssh"
+  echo "e.g. use:
+
+  git clone git@$PROJECT:/path_to_project/
+
+instead of
+
+  git clone git@$HOST:/path_to_project/
+
+for cloning the project git repo"
+else
+  echo "SSH config already contains host: $PROJECT"
+fi

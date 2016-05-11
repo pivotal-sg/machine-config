@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [[ ${#@} == 1 ]]; then # unless there's only 1 parameter
+  PROJECT=$(echo "$1" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+  KEYPAIR_NAME=$HOME/.ssh/id_rsa_$PROJECT
+
+  ssh-keygen -t rsa -N '' -f $KEYPAIR_NAME
+
+  echo "Created $KEYPAIR_NAME\n"
+
+  cat $KEYPAIR_NAME.pub | pbcopy
+
+  echo "Public key copied to clipboard\n"
+
+else
+  echo "Usage:
+
+ssh-project PROJECT
+"
+
+fi

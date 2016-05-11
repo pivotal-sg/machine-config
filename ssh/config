@@ -1,8 +1,8 @@
 # Host somewhere.tld
-#   IdentityFile ~/.ssh/some-ssh.id_rsa
-#   User root
+#   Hostname host.com
+#   IdentityFile ~/.ssh/id_rsa_PROJECTNAME
+#   User username
 
-# This should always be last
 Host * !localhost !127.0.0.1
   ControlMaster auto
   ControlPersist 3600
