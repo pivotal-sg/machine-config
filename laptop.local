@@ -17,7 +17,7 @@ git_clone_or_pull() {
 ####
 
 git_clone_or_pull https://github.com/syl20bnr/spacemacs.git $HOME/.spacemacs-emacs &&
-  ln -sf ~/.spacemacs-emacs ~/.emacs.d
+  ln -sfn ~/.spacemacs-emacs ~/.emacs.d
 
 git_clone_or_pull https://github.com/ocodo/.emacs.d.git $HOME/.ocodo-emacs
 
