@@ -142,4 +142,10 @@ sleep.
 
 After following all the steps above it's time to create the image.
 
-1. Reboot the machine
+1. Start the machine and hold the Option ⌥ key
+1. Wait for the bootscreen to load. You should eventually see an icon with the text: `netboot01`. If you don't, either you are not connected to the network or the netboot server is down. Click on `netboot01`. This will load deploy studio's runtime, a lightweight osx image to help you image the machine.
+1. Once booted up, wait for the runtime to connect to the netboot server. This step should be automatic, but if for some reason it fails, authenticate with the server using the default workstation username and password.
+1. Select `Create a Volume from Master`.
+2. Name the image with the following format: `<OSX_NAME>_<OSX_VERSION>_<DATE_CREATED>_<PRISTINE|WITH_DEV_TOOLS>`
+3. Leave other options unchanged. Click on play and wait for imaging to finish
+4. Verify that the image was created by connecting to NAS and navigating to `afp://NAS._afpovertcp._tcp.local/Neo/DeployStudioRepository/Masters/HFS`
