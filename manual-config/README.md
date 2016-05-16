@@ -148,4 +148,4 @@ After following all the steps above it's time to create the image.
 1. Select `Create a Volume from Master`.
 2. Name the image with the following format: `<OSX_NAME>_<OSX_VERSION>_<DATE_CREATED>_<PRISTINE|WITH_DEV_TOOLS>`
 3. Leave other options unchanged. Click on play and wait for imaging to finish
-4. Verify that the image was created by connecting to NAS and navigating to `afp://NAS._afpovertcp._tcp.local/Neo/DeployStudioRepository/Masters/HFS`
+4. Verify that the image was created by connecting to NAS and navigating to `afp://NAS._afpovertcp._tcp.local/Neo/DeployStudioRepository/Masters/HFS`. If the machine you imaged had a recovery parition, you should see the recovery image associated with the machine here as well.
