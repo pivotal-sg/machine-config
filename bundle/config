@@ -4,3 +4,4 @@ BUNDLE_JOBS: '7'
 BUNDLE_BUILD__LIBV8: "--with-system-v8"
 # OSX doesn't have openssl by default
 BUNDLE_BUILD__EVENTMACHINE: "--with-cppflags=-I/usr/local/opt/openssl/include"
+BUNDLE_BUILD__PUMA: "--with-opt-dir=/usr/local/opt/openssl"
