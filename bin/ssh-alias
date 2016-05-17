@@ -14,9 +14,9 @@ identity_file=$HOME/.ssh/id_rsa_$PROJECT
 ssh_config=$HOME/.ssh/config
 
 if [[ -s $identity_file ]];then
-  echo "Indentity file $identity_file already exists"
+  echo "Identity file $identity_file already exists"
 else
-  echo "There is no SSH indentity key for this project, create one [Y/n]\n" && read reply
+  echo "There is no SSH identity key for this project, create one [Y/n]\n" && read reply
   if [[ "n" == $(echo "$reply" | tr '[:upper:]' '[:lower:]') ]]; then
     echo "abort"
     exit 1;
