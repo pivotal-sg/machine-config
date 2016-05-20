@@ -21,7 +21,7 @@ else
     echo "abort"
     exit 1;
   else
-    ssh-project $PROJECT
+    ssh-projectkey $PROJECT
   fi
 fi
 
