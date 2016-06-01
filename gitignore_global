@@ -38,3 +38,6 @@
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
+
+# Local project files to never store
+Procfile.local
