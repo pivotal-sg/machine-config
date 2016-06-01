@@ -30,7 +30,7 @@ new_config="
 $new_host
   HostName $HOST
   User $USER
-  IndentityFile $identity_file
+  IdentityFile $identity_file
 "
 
 grep_result=$(grep "$new_host" ~/.ssh/config)
