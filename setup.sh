@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp $(dirname $0)/laptop.local $HOME/.laptop.local
+ln -s $(dirname $0)/laptop.local $HOME/.laptop.local
 
 laptop_folder=/tmp/laptop
 laptop_script=$laptop_folder/mac
