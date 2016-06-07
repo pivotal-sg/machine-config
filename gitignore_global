@@ -20,9 +20,9 @@
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
 
-# Ruby specific stuff
-.idea/.generators
-.idea/.rakeTasks
+# Ruby specific IDEA stuff
+.generators
+.rakeTasks
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
