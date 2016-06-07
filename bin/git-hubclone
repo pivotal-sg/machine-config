@@ -1,0 +1,27 @@
+#!/bin/bash
+
+default_organization=pivotal-sg
+
+if [ -z "$1" ] ; then
+  echo "Usage: $(basename $0) [github organization/]<gitub repo>"
+  echo "If no github organization is provided '${default_organization}' will be used."
+  exit 1
+fi
+
+organization=$(dirname $1)
+repo=$(basename $1)
+
+if [ "$organization" = "." ] ; then  # no org provided
+   organization=$default_organization
+fi
+
+identity_file="$HOME/.ssh/id_rsa_${repo}"
+if [ -s "$identity_file" ] ; then
+  echo "Project SSH key exists, will assume a corresponding ssh alias exists..."
+  host=$repo
+else
+  host="git@github.com"
+fi
+
+set -x
+git clone ${host}:${organization}/${repo}

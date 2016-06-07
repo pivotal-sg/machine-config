@@ -46,7 +46,12 @@ instead of
 
   git clone git@$HOST:/path_to_project/
 
-for cloning the project git repo"
+for cloning the project git repo.
+
+Or use the helper hubclone to do it one go, which will do this:
+
+  git hubclone organization/project
+"
 else
   echo "SSH config already contains host: $PROJECT"
 fi
