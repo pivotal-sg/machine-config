@@ -9,6 +9,10 @@ if [ ! -x $laptop_script ] ; then
   git clone https://github.com/thoughtbot/laptop.git $laptop_folder
 fi
 
+if [ ! -s "$HOME/.zshrc" ] ; then
+  echo 'source $HOME/.zshrc.ohmyzsh' > $HOME/.zshrc
+fi
+
 sh $laptop_script &&
   rcup -d $(dirname $0) &&
   # Run laptop again to ensure any local laptop changes are going in
