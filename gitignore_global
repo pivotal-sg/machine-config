@@ -19,6 +19,7 @@
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.idea/dataSources/
 
 # Ruby specific IDEA stuff
 .generators
