@@ -1,0 +1,84 @@
+#!/usr/bin/env ruby
+require 'io/console'
+require 'octokit'
+require 'optparse'
+
+LOGIN = "login: "
+PASSWORD = "password: "
+HUB_TOKEN = "Token name: "
+OTP = "GitHub 2FA/OTP: "
+
+def prompt(message, hidden = false)
+  print message
+  if hidden
+    STDIN.noecho(&:gets).chomp
+  else
+    gets.chomp
+  end
+end
+
+def password(message)
+  pword = prompt(message, true)
+  puts()
+  pword
+end
+
+def hub_client
+  Octokit::Client.new(login: prompt(LOGIN), password: password(PASSWORD))
+end
+
+def otp_header
+  { "X-GitHub-OTP" => prompt(OTP) }
+end
+
+def list_tokens
+  hub_client.authorizations(headers: otp_header).select {|t| t.note&.length && t.note.length > 0 }
+end
+
+def create_token(note, scopes = ["repo"])
+  hub_client.create_authorization(scopes: scopes, note: note, headers: otp_header)
+end
+
+def delete_token note
+  client = hub_client
+  tokens = client.authorizations(headers: headers = otp_header).select {|t| t.note == note }
+  if tokens.length == 1
+    begin
+      client.delete_authorization(tokens.first.id, headers: headers)
+      puts "Deleted token: #{note}"
+    rescue
+      abort "oh no"
+    end
+  else
+    puts "token not found"
+  end
+end
+
+opt_parser = OptionParser.new do |opts|
+  opts.program_name = "hubtoken"
+  opts.banner = "HubToken - Manage GitHub Personal access tokens"
+
+  opts.on('-c', '--create-token NOTE') do |note|
+    puts "Creating a GitHub personal access token : '#{note}'"
+    puts create_token(note)[:token]
+    abort
+  end
+
+  opts.on('-D', '--delete-token NOTE') do |note|
+    puts "Deleting GitHub personal access token : '#{note}'"
+    delete_token note
+    abort
+  end
+
+  opts.on('-l', '--list-tokens') do
+    list = list_tokens
+    puts "#{list.size} Token(s)"
+    puts list.compact.map(&:note)
+    abort
+  end
+end
+
+opt_parser.parse!
+
+puts opt_parser.banner
+puts opt_parser.summarize
