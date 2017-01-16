@@ -1,23 +1,19 @@
 authors:
-  sn: Swayam Narain; snarain
-  jm: Jason Milkins; jmilkins
-  gh: Gabe Hollombe; ghollombe
+  an: Ann Nguyen; trnguyen
   as: Abhaya Shenoy; ashenoy
   ay: Alan Yeo; ayeo
-  cg: Carlos Gavino; cgavino
-  db: Divya Bhargov; dbhargov
   ba: Björn Andersson; bandersson
   bt: Benjamin Tan; btan
-  mc: Michael Cheng; mcheng
-  mm: Mike Mazur; mmazur
+  cg: Carlos Gavino; cgavino
+  dv: David Varvel; dvarvel
+  eb: Erika Buenaventura; ebuenaventur
+  ga: Gamaliel Amaudruz; gamaudruz
+  jm: Jason Milkins; jmilkins
+  jrc: James Rivett-Carnac; jrivettcarnac
+  ln: Liza Ng; lng
   nt: Natalie Tay; ntay
   rr: Rahul Rajeev; rrajeev
-  sf: Stephan February; sfebruary
-  dm: Daryl Manning; dmanning
-  dv: Diego Valenzuela; dgarciavalenzuela
-  dg: Diego Garcia; dgarciavalenzuela
-  jrc: James Rivett-Carnac; jrivettcarnac
-  eb: Erika Buenaventura; ebuenaventur
+  sn: Swayam Narain; snarain
   yh: Yifeng Hou; yhou
 email:
   domain: pivotal.io
