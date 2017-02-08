@@ -135,3 +135,6 @@ update-machine-config(){
 }
 
 eval "$(rbenv init - --no-rehash)"
+
+# Get useful completion with . - _ delimiters...
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
