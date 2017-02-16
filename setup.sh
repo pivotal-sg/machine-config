@@ -18,7 +18,7 @@ sh $laptop_script &&
   # Run laptop again to ensure any local laptop changes are going in
   rm -rf $laptop_folder &&
   # This has been the easiest way I've found to keep virtualenvwrapper working
-  sudo easy_install virtualenvwrapper &&
+  sudo easy_install virtualenv virtualenvwrapper &&
   # rbenv and pyenv are both installed from brew and will keep conf there
   rm -rf $HOME/.pyenv $HOME/.rbenv
   rm $HOME/.laptop.local
