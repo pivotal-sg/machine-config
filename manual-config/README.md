@@ -7,10 +7,18 @@ Together with step by step instructions.
 
 ### System preferences
 
+### Date & Time
+
+1. `Date & Time` tab
+  - Select `Set date and time automatically`
+1. `Time Zone` tab
+  - Select `Set time zone automatically using current location`
+
 ### Keyboard
 
 1. `Keyboard` tab
   - Select `Use all F1, F2, etc. keys as standard function keys`
+  - Open `Modifier Keys...` and change `Caps Lock` key to `Control`
 1. `Text` tab
   - Deselect `Correct spelling automatically`
   - Deselect `Use smart quotes and dashes`
