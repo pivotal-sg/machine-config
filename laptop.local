@@ -60,6 +60,7 @@ cask "vagrant"
 cask "virtualbox"
 
 brew "autojump"  # easily jump between directories you've visited before
+brew "carthage"
 brew "emacs-mac"
 brew "fzf"
 brew "git-duet"
@@ -69,12 +70,14 @@ brew "htop-osx"
 brew "jq"
 brew "lzlib"  # needed to compile python
 brew "maven"
+brew "nvm"
 brew "pyenv"
 brew "q"
 brew "sift"
 brew "the_platinum_searcher"
 brew "tree"
 brew "wget"
+brew "yarn"
 
 EOF
 
