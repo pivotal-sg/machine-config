@@ -13,6 +13,11 @@ if [ ! -s "$HOME/.zshrc" ] ; then
   echo 'source $HOME/.zshrc.ohmyzsh' > $HOME/.zshrc
 fi
 
+# Create folder for ssh multiplexing (see `./ssh/config`)
+mkdir ~/.ssh/cm_socket
+# Setup template dir for git hooks (see `./gitconfig`)
+mkdir ~/.git-template-with-git-hooks
+
 sh $laptop_script &&
   rcup -d $(dirname $0) &&
   # Run laptop again to ensure any local laptop changes are going in
