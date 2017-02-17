@@ -17,6 +17,7 @@
   who = shortlog -s --
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  dc = duet-commit
 
 [init]
   templatedir = ~/.git-template-with-git-hooks
