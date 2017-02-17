@@ -49,3 +49,14 @@ iTerm2 will be installed by the laptop script. After installation configure it b
 1. Open `Preferences`
 1. Select `Load preferences from a custom folder or URL`
 1. Select the iTerm2 folder in the machine-config/manual-config folder
+
+## Google Chrome setup
+
+After installation, do the following:
+
+1. Click on `Chrome` in the menu bar and select `Warn Before Quitting`
+1. Download the following extensions:
+  - JSONView
+  - React Developer Tools
+  - Postman
+1. Open `Developer Tools` panel and go to `Settings`. Select `Disable cache (while DevTools is open)`
