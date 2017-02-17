@@ -60,3 +60,7 @@ After installation, do the following:
   - React Developer Tools
   - Postman
 1. Open `Developer Tools` panel and go to `Settings`. Select `Disable cache (while DevTools is open)`
+
+## Jumpcut setup
+
+After installation, in the `Hotkeys` tab, change the hotkey to use &#8679;&#8984;V.
