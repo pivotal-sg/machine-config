@@ -11,6 +11,9 @@
 # Documentation for the PT commit message syntax is available here:
 # https://www.pivotaltracker.com/help/api#scm_post_commit
 
+PROJECT_HOME=$(git rev-parse --show-toplevel)
+GIT_COMMIT_COMMAND="git duet-commit"
+
 case "$1" in
   --about)
     echo "Checks whether a Pivotal Tracker story number is in the commit"
@@ -23,6 +26,9 @@ case "$1" in
       echo >&2 "ERROR: The commit message does not contain a PT story number."
       echo >&2 "       If there is no story for this commit, add [no-pt-story] to the"
       echo >&2 "       end of the commit message."
+      echo >&2 ""
+      echo >&2 "To reuse your last commit message: "
+      echo >&2 "       ${GIT_COMMIT_COMMAND} -eF ${PROJECT_HOME}/.git/COMMIT_EDITMSG"
       exit 1
     fi
 
