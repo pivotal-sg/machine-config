@@ -1,9 +1,6 @@
 authors:
-  an: Ann Nguyen; trnguyen
   as: Abhaya Shenoy; ashenoy
   ay: Alan Yeo; ayeo
-  ba: Björn Andersson; bandersson
-  bt: Benjamin Tan; btan
   cg: Carlos Gavino; cgavino
   dv: David Varvel; dvarvel
   eb: Erika Buenaventura; ebuenaventur
@@ -12,7 +9,6 @@ authors:
   ln: Liza Ng; lng
   nt: Natalie Tay; ntay
   rr: Rahul Rajeev; rrajeev
-  sn: Swayam Narain; snarain
   yh: Yifeng Hou; yhou
 email:
   domain: pivotal.io
