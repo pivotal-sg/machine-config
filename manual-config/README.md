@@ -10,41 +10,41 @@ Together with step by step instructions.
 ### Date & Time
 
 1. `Date & Time` tab
-  - Select `Set date and time automatically`
+    - Select `Set date and time automatically`
 1. `Time Zone` tab
-  - Select `Set time zone automatically using current location`
+    - Select `Set time zone automatically using current location`
 
 ### Keyboard
 
 1. `Keyboard` tab
-  - Select `Use all F1, F2, etc. keys as standard function keys`
-  - Open `Modifier Keys...` and change `Caps Lock` key to `Control`
+    - Select `Use all F1, F2, etc. keys as standard function keys`
+    - Open `Modifier Keys...` and change `Caps Lock` key to `Control`
 1. `Text` tab
-  - Deselect `Correct spelling automatically`
-  - Deselect `Use smart quotes and dashes`
+    - Deselect `Correct spelling automatically`
+    - Deselect `Use smart quotes and dashes`
 1. `Shortcuts` tab
-  - Change Full keyboard access to `All controlls` at the bottom of the screen
-  - `Launchpad & Dock` tab
+    - Change Full keyboard access to `All controlls` at the bottom of the screen
+1. `Launchpad & Dock` tab
     - Deselect `Turn dock hiding On/Off`
-  - `Mission control` tab
+1. `Mission control` tab
     - Deselect all shortcuts
-  - `Keyboards` tab
+1. `Keyboards` tab
     - Deselect all shortcuts
     - Select `Move focus to next window`
     - Select `Move focus to the next window drawer`
-  - `Services` tab
+1. `Services` tab
     - Deselect anything with a shortcut
-  - `Spotlight` tab
+1. `Spotlight` tab
     - Deselect all shortcuts
-  - `Accessability` tab
+1. `Accessability` tab
     - Deselect all shortcuts
 
 ### Sound
 
 1. `Sound Effects` tab
-  - Deselect `Play user interface sound effects`
-  - Deselect `Play feedback when volume is changed`
-  - Select `Show volume in menu bar`
+    - Deselect `Play user interface sound effects`
+    - Deselect `Play feedback when volume is changed`
+    - Select `Show volume in menu bar`
 
 ### Sharing
 
@@ -64,9 +64,9 @@ After installation, do the following:
 
 1. Click on `Chrome` in the menu bar and select `Warn Before Quitting`
 1. Download the following extensions:
-  - JSONView
-  - React Developer Tools
-  - Postman
+    - JSONView
+    - React Developer Tools
+    - Postman
 1. Open `Developer Tools` panel and go to `Settings`. Select `Disable cache (while DevTools is open)`
 
 ## Jumpcut setup
